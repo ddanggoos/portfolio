@@ -1,0 +1,103 @@
+{
+  "profile": {
+    "id": 1,
+    "name": "한창규",
+    "email": "hanck95@naver.com",
+    "phone": "010-7447-1773",
+    "address": "서울시 성동구 중곡동",
+    "profileImg": "/img/profile.png"
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "포트폴리오 웹사이트",
+      "description": "Vue 3, TypeScript, Tailwind CSS를 사용한 개인 포트폴리오 웹사이트",
+      "img": "/img/gobooke.png",
+      "icon": "BeakerIcon",
+      "tags": ["Vue", "TypeScript", "Tailwind CSS"],
+      "status": "완료",
+      "link": "https://hanck95.github.io/portfolio/"
+    },
+    {
+      "id": 2,
+      "title": "React 쇼핑몰",
+      "description": "React와 Node.js를 사용한 풀스택 쇼핑몰 애플리케이션",
+      "img": "/img/gobooke.png",
+      "icon": "ShoppingBagIcon",
+      "tags": ["React", "Node.js", "MongoDB"],
+      "status": "진행중",
+      "link": "https://hanck95.github.io/portfolio/"
+    },
+    {
+      "id": 3,
+      "title": "모바일 앱",
+      "description": "React Native로 개발한 크로스 플랫폼 모바일 애플리케이션",
+      "img": "/img/gobooke.png",
+      "icon": "DevicePhoneMobileIcon",
+      "tags": ["React Native", "JavaScript"],
+      "status": "계획중",
+      "link": "https://hanck95.github.io/portfolio/"
+    },
+
+    {
+      "id": 4,
+      "title": "모바일 앱",
+      "description": "React Native로 개발한 크로스 플랫폼 모바일 애플리케이션",
+      "img": "/img/gobooke.png",
+      "icon": "DevicePhoneMobileIcon",
+      "tags": ["React Native", "JavaScript"],
+      "status": "계획중",
+      "link": "https://hanck95.github.io/portfolio/"
+    },
+
+    {
+      "id": 5,
+      "title": "모바일 앱",
+      "description": "React Native로 개발한 크로스 플랫폼 모바일 애플리케이션",
+      "img": "/img/gobooke.png",
+      "icon": "DevicePhoneMobileIcon",
+      "tags": ["React Native", "JavaScript"],
+      "status": "계획중",
+      "link": "https://hanck95.github.io/portfolio/"
+    }
+  ],
+  "skills": [
+    {
+      "id": 1,
+      "title": "Frontend",
+      "description": "Vue.js, React, TypeScript, Tailwind CSS",
+      "icon": "CodeBracketIcon",
+      "level": "고급"
+    },
+    {
+      "id": 2,
+      "title": "Backend",
+      "description": "Node.js, Express, MongoDB, PostgreSQL",
+      "icon": "ServerIcon",
+      "level": "중급"
+    },
+    {
+      "id": 3,
+      "title": "DevOps",
+      "description": "Docker, AWS, CI/CD",
+      "icon": "CloudIcon",
+      "level": "초급"
+    }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "title": "프론트엔드 개발자",
+      "description": "2023.01 - 현재",
+      "icon": "BriefcaseIcon",
+      "company": "테크 스타트업"
+    },
+    {
+      "id": 2,
+      "title": "웹 개발 인턴",
+      "description": "2022.06 - 2022.12",
+      "icon": "AcademicCapIcon",
+      "company": "IT 회사"
+    }
+  ]
+}
