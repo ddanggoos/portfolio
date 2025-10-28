@@ -1,0 +1,58 @@
+name: Deploy to Raspberry Pi
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+
+      - name: Deploy to Raspberry Pi
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.RASPBERRY_HOST }}
+          username: ${{ secrets.RASPBERRY_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            # Navigate to project directory
+            cd ~/projects/portfolio
+
+            # Pull latest changes
+            git pull origin main
+
+            # Stop existing container if running
+            docker stop portfolio-app || true
+            docker rm portfolio-app || true
+
+            # Build new Docker image
+            docker build -t portfolio-app .
+
+            # Run new container
+            docker run -d \
+              --name portfolio-app \
+              --restart unless-stopped \
+              -p 80:80 \
+              portfolio-app
+
+            # Clean up old images
+            docker image prune -f
