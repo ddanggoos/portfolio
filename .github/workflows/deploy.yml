@@ -37,7 +37,7 @@ jobs:
           host: ${{ secrets.RASPBERRY_HOST }}
           username: ${{ secrets.RASPBERRY_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
+          port: ${{ secrets.SSH_PRIVATE_PORT }}
           script: |
             # Navigate to project directory
             cd ~/projects/portfolio
