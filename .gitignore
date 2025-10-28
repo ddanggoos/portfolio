@@ -88,12 +88,4 @@ jspm_packages/
 tmp/
 temp/
 
-# Deployment files (라즈베리파이 배포용)
-deploy.sh
-deploy-multi.sh
-manage-projects.sh
-nginx-proxy.conf
-nginx.conf
-Dockerfile
-docker-compose.yml
-nginx-proxy/
+portfolio.code-workspace
