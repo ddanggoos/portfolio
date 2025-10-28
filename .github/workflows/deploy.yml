@@ -37,7 +37,10 @@ jobs:
           host: ${{ secrets.RASPBERRY_HOST }}
           username: ${{ secrets.RASPBERRY_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PRIVATE_PORT }}
+          port: 2222
+          timeout: 60s
+          command_timeout: 10m
+          debug: true
           script: |
             # Navigate to project directory
             cd ~/projects/portfolio
