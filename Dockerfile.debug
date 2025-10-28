@@ -1,0 +1,34 @@
+# Build stage
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install all dependencies (including dev dependencies for build)
+RUN npm ci
+
+# Copy source code
+COPY . .
+
+# Build the application
+RUN npm run build
+
+# Debug stage - 파일 구조 확인
+FROM alpine:latest
+
+# Install necessary tools
+RUN apk add --no-cache bash
+
+# Copy built files
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+# Show file structure
+RUN echo "=== File structure ===" && \
+    ls -la /usr/share/nginx/html/ && \
+    echo "=== Assets directory ===" && \
+    ls -la /usr/share/nginx/html/assets/ || echo "No assets directory"
+
+# Keep container running for debugging
+CMD ["tail", "-f", "/dev/null"]
